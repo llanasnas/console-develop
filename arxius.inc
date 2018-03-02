@@ -23,8 +23,7 @@ function esborra_fitxer($command){
     }
 }
 function sha1_peix($fitxer){
-
-
+    escriure(sha1($fitxer));
 }
 function file_stat($dir){
 
