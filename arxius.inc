@@ -1,10 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Alumne
- * Date: 26/02/2018
- * Time: 18:07
- */
+session_start();
+
 function crea_modifica_fitxer($name,$content){
 
     $control = fopen("dirs_and_files/".$name,"w+");
@@ -29,6 +25,16 @@ function sha1_peix($fitxer){
 
 
 }
+function file_stat($dir){
+
+    $status = stat($dir);
+    $file = fopen("text_consola.txt","a")OR die("Cannot Open this file");
+    $content = "Acces Time:". $status['atime'] . PHP_EOL . " Size: " . $status['size'];
+    fwrite($file,$content);
+    fclose($file);
+
+}
+
 function cat_fitcher($filename){
 
     $file = fopen("text_consola.txt","a")OR die("Cannot Open this file");
