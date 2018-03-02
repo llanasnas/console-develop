@@ -87,6 +87,10 @@ function executa($comanda)
                 }
                 break;
 
+            case "sha1":
+                
+                break;
+
             default:
                 escriure("unknown command");
                 break;
