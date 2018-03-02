@@ -62,7 +62,16 @@ function executa($comanda)
                     }
                 }
                 break;
+            case "stats":
 
+                if(is_file("dirs_and_files/".$arr[1])){
+                    file_stat("dirs_and_files/".$arr[1]);
+                }else{
+                    escriure("This file don't exist");
+                }
+
+
+                break;
             case "ls":
                 if (empty($arr[1])) {
                     ls();
