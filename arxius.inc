@@ -35,29 +35,7 @@ function cat_fitcher($filename){
     $file = fopen("text_consola.txt","a")OR die("Cannot Open this file");
     fwrite($file, file_get_contents($filename). PHP_EOL);
     fclose($file);
-    /*if ($_FILES["file"]["error"] > 0) {
-                echo "Return Code: " . $_FILES["file"]["error"] . PHP_EOL;
-        $content = "";
-    }
-            else {
-                //Print file details
-                echo "Upload: " . $_FILES["file"]["name"] . PHP_EOL;
-                echo "Type: " . $_FILES["file"]["type"] . PHP_EOL;
-                echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb" . PHP_EOL;
-                echo "Temp file: " . $_FILES["file"]["tmp_name"] . PHP_EOL;
 
-                //if file already exists
-                if (file_exists("dirs_and_files/" . $_FILES["file"]["name"])) {
-                    echo $_FILES["file"]["name"] . " already exists. ";
-                }
-                else {
-                    //Store file in directory "upload" with the name of "uploaded_file.txt"
-                    $storagename = "uploaded_file.txt";
-                    move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $storagename);
-                    echo "Stored in: " . "upload/" . $_FILES["file"]["name"] . PHP_EOL;
-                }
-            
-        }*/
 
     
 }
