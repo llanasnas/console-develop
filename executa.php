@@ -14,67 +14,84 @@ function executa($comanda)
     if ($comanda) {
         escriure($comanda);
         $arr = explode(' ', trim($comanda));
-        if ($arr[0] == "mkdir") {
-            crea_directoris($comanda);
-        } else if ($arr[0] == "vim") {
-            if (empty($arr[1])) {
-                escriure("No file name expected");
-            } else {
-                $content = "";
-                if (empty($arr[2])) {
-                    crea_modifica_fitxer($arr[1], $content);
+
+        switch ($arr[0]){
+
+            case "mkdir":
+                crea_directoris($comanda);
+                break;
+
+            case "vim":
+                if (empty($arr[1])) {
+                    escriure("No file name expected");
                 } else {
-                    for ($i = 2; $i <= sizeof($arr); $i++) {
-                        $content = $content . $arr[$i] . " ";
+                    $content = "";
+                    if (empty($arr[2])) {
+                        crea_modifica_fitxer($arr[1], $content);
+                    } else {
+                        for ($i = 2; $i <= sizeof($arr); $i++) {
+                            $content = $content . $arr[$i] . " ";
+                        }
+                        crea_modifica_fitxer($arr[1], $content);
                     }
-                    crea_modifica_fitxer($arr[1], $content);
-                }
 
-            }
-
-        } else if ($arr[0] == "rm") {
-            if ($arr[1] == "-d") {
-                esborra_directoris("dirs_and_files/".$arr[2]);
-            } else {
-                esborra_fitxer($comanda);
-            }
-        } else if ($arr[0] == "clear") {
-            buidar_fitxer();
-        } else if ($arr[0] == "mv") {
-            if ($arr[1] == "-d") {
-                if (empty($arr[2])) {
-                    escriure("Check the syntax ( mv -d 'directory' 'new location' )");
                 }
-                if (empty($arr[3])) {
-                    escriure("Check the syntax ( mv -d 'directory' 'new location' )");
+                break;
+
+            case "rm":
+                if ($arr[1] == "-d") {
+                    esborra_directoris("dirs_and_files/".$arr[2]);
                 } else {
-                    move_directory($arr[2], $arr[3]);
+                    esborra_fitxer($comanda);
                 }
-            }
-        } else if ($arr[0] == "ls") {
-            if (empty($arr[1])) {
-                ls();
-            } else {
-                ls_other($arr[1]);
-            }
-        } else if ($arr[0] == "cat") {
-            if (file_exists("dirs_and_files/" . $arr[1])) {
-                cat_fitcher("dirs_and_files/" . $arr[1]);
-            }
-        }else if($arr[0]=="cp"){
-            if ($arr[1] == "-d") {
-                if (empty($arr[2]) || empty($arr[3])) {
-                    escriure("Check the syntax ( cp -d 'directory' 'new location' )");
-                }else{
-                    copia_directori($arr[2],$arr[3]);
+                break;
+
+            case "clear":
+                buidar_fitxer();
+                break;
+
+            case "mv":
+                if ($arr[1] == "-d") {
+                    if (empty($arr[2])) {
+                        escriure("Check the syntax ( mv -d 'directory' 'new location' )");
+                    }
+                    if (empty($arr[3])) {
+                        escriure("Check the syntax ( mv -d 'directory' 'new location' )");
+                    } else {
+                        move_directory($arr[2], $arr[3]);
+                    }
                 }
-            }
+                break;
+
+            case "ls":
+                if (empty($arr[1])) {
+                    ls();
+                } else {
+                    ls_other($arr[1]);
+                }
+                break;
+
+            case "cat":
+                if (file_exists("dirs_and_files/" . $arr[1])) {
+                    cat_fitcher("dirs_and_files/" . $arr[1]);
+                }
+                break;
+
+            case "cp":
+                if ($arr[1] == "-d") {
+                    if (empty($arr[2]) || empty($arr[3])) {
+                        escriure("Check the syntax ( cp -d 'directory' 'new location' )");
+                    }else{
+                        copia_directori($arr[2],$arr[3]);
+                    }
+                }
+                break;
+
+            default:
+                escriure("unknown command");
+                break;
         }
-        
-        
-        else {
-            escriure("unknown command");
-        }
+
     }
 }
 
