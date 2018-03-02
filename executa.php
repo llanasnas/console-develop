@@ -34,7 +34,7 @@ function executa($comanda)
 
         } else if ($arr[0] == "rm") {
             if ($arr[1] == "-d") {
-                esborra_directoris($arr[2]);
+                esborra_directoris("dirs_and_files/".$arr[2]);
             } else {
                 esborra_fitxer($comanda);
             }

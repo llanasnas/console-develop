@@ -1,0 +1,17 @@
+root@gerard-PC~# vim pelonasal/cotlin
+root@gerard-PC~# ls pelonasal
+<span style='color:blue; !important'>costra</span>
+<span style='color:darkgrey; !important'>cotlin</span>
+root@gerard-PC~# rm -d pelonasal
+root@gerard-PC~# this directory don't exist
+root@gerard-PC~# rm -d pelonasal
+root@gerard-PC~# this directory don't exist
+root@gerard-PC~# rm -d pelonasal
+root@gerard-PC~# ls
+<span style='color:darkgrey; !important'>alberto</span>
+<span style='color:blue; !important'>pilonasal</span>
+<span style='color:darkgrey; !important'>postu.txt</span>
+root@gerard-PC~# rm postu.txt
+root@gerard-PC~# ls
+<span style='color:darkgrey; !important'>alberto</span>
+<span style='color:blue; !important'>pilonasal</span>

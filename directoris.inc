@@ -12,36 +12,22 @@ function crea_directoris($command){
     }
 }
 function esborra_directoris($dir){
-
-    $dir= "dirs_and_files/".$dir;
-    if(file_exists($dir)) {
+    
+    if(is_dir($dir)) {
         $files = scandir($dir);
-        if((sizeof($dir))==0){
-            rmdir($dir);
-        }
         foreach ($files as $item) {
-
-            if ($item == "." || $item == "..") {
-            } else {
-                if (is_dir($item)) {
-                    esborra_directoris($dir . "/" . $item);
+            if ($item != "." || $item != "..") {
+                if (is_dir($dir."/".$item)) {
+                    esborra_directoris($dir . "/" . $item."/");
                 } else if (is_file($dir . "/" . $item)) {
                     unlink($dir . "/" . $item);
                 }
             }
         }
+        rmdir($dir);
     }else{
-
         escriure("this directory don't exist");
     }
-
-    /*if(!file_exists($dir)){
-        escriure("Cannot find ".$dir);
-    }else{
-        if(!rmdir($dir)){
-            escriure("can't remove this directory");
-        }
-    }*/
 }
 function escriure($text){
 

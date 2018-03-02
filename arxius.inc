@@ -31,12 +31,9 @@ function sha1_peix($fitxer){
 }
 function cat_fitcher($filename){
 
-
     $file = fopen("text_consola.txt","a")OR die("Cannot Open this file");
     fwrite($file, file_get_contents($filename). PHP_EOL);
     fclose($file);
-
-
     
 }
 
