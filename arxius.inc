@@ -1,6 +1,6 @@
 <?php
-session_start();
-$_SESSION["path"]="dirs_and_files/";
+
+
 
 function crea_modifica_fitxer($name,$content){
 

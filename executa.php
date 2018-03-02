@@ -8,6 +8,7 @@
 include_once("console.php");
 include_once("directoris.inc");
 include_once("arxius.inc");
+include_once ("sistema.inc");
 
 function executa($comanda)
 {
@@ -49,7 +50,11 @@ function executa($comanda)
             case "clear":
                 buidar_fitxer();
                 break;
+            case "cd":
 
+                moures($arr[1]);
+
+                break;
             case "mv":
                 if ($arr[1] == "-d") {
                     if (empty($arr[2])) {

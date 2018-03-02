@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 
 function crea_directoris($command){
@@ -32,7 +32,7 @@ function esborra_directoris($dir){
 function escriure($text){
 
     $file = fopen("text_consola.txt","a")OR die("Cannot Open this file");
-    $text = "root@gerard-PC~# ". $text;
+    $text = "root@gerard-PC: ".$_SESSION['path']." # ". $text;
     fwrite($file,$text . PHP_EOL);
     fclose($file);
 
