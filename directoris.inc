@@ -12,18 +12,18 @@ function crea_directoris($command){
     }
 }
 function esborra_directoris($dir){
-    
-    if(is_dir($dir)) {
-        $files = scandir($dir);
-        foreach ($files as $item) {
-            if ($item != "." || $item != "..") {
-                if (is_dir($dir."/".$item)) {
-                    esborra_directoris($dir . "/" . $item."/");
-                } else if (is_file($dir . "/" . $item)) {
-                    unlink($dir . "/" . $item);
-                }
+
+    if (is_dir($dir)) {
+        $objects = scandir($dir);
+        foreach ($objects as $object) {
+            if ($object != "." && $object != "..") {
+                if (is_dir($dir."/".$object))
+                    esborra_directoris($dir."/".$object);
+                else
+                    unlink($dir."/".$object);
             }
         }
+        rmdir($dir);
         if(empty(scandir($dir))){rmdir($dir);}
     }else{
         escriure("this directory don't exist");

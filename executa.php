@@ -89,8 +89,8 @@ function executa($comanda)
             case "stats":
 
                 if ($arr[1] == "-f") {
-                    if (is_file("dirs_and_files/" . $arr[1])) {
-                        file_stat("dirs_and_files/" . $arr[1]);
+                    if (is_file("dirs_and_files/" . $arr[2])) {
+                        file_stat("dirs_and_files/" . $arr[2]);
                     } else {
                         escriure("This file don't exist");
                     }

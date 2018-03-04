@@ -88,7 +88,7 @@ function file_stat($dir)
 
     $status = stat($dir);
     $file = fopen("text_consola.txt", "a") OR die("Cannot Open this file");
-    $content = "Acces Time:" . $status['atime'] . PHP_EOL . " Size: " . $status['size'];
+    $content = "Acces Time:" . $status['atime'] . PHP_EOL . " Size: " . $status['size']. PHP_EOL ;
     fwrite($file, $content);
     fclose($file);
 
