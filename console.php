@@ -5,7 +5,7 @@
  * Date: 19/02/2018
  * Time: 18:08
  */
-
+session_start();
 
 
 
