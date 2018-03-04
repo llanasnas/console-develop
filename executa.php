@@ -102,7 +102,7 @@ function executa($comanda)
                 break;
 
             case "sha1":
-                
+                sha1_peix($arr[1]);
                 break;
 
             default:
