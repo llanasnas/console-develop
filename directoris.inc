@@ -32,7 +32,7 @@ function esborra_directoris($dir){
 function escriure($text){
 
     $file = fopen("text_consola.txt","a")OR die("Cannot Open this file");
-    if($_SESSION['path']=="dirs_and_files"){
+    if($_SESSION['path']=="dirs_and_files/"){
         $text = "root@gerard-PC~# ". $text;
     }else {$text = "root@gerard-PC: ".$_SESSION['path']." # ". $text;}
 

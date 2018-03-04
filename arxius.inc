@@ -4,7 +4,7 @@
 function crea_modifica_fitxer($name, $content)
 {
 
-    $control = fopen("dirs_and_files/" . $name, "w+");
+    $control = fopen("dirs_and_files/" . $name, "a");
     if ($control == false) {
         escriure("can't create any files, check your permissions");
         fclose($control);
@@ -72,7 +72,6 @@ function md5_peix($fitxer)
 
 function copia_fitxer($old_file, $new_file)
 {
-
     $old_file = "dirs_and_files/" . $old_file;
     $new_file = "dirs_and_files/" . $new_file;
     if (file_exists($old_file)) {
@@ -82,7 +81,6 @@ function copia_fitxer($old_file, $new_file)
     } else {
         escriure("cannot find this file");
     }
-
 }
 
 function file_stat($dir)

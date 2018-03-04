@@ -30,7 +30,7 @@ function executa($comanda)
                     if (empty($arr[2])) {
                         crea_modifica_fitxer($arr[1], $content);
                     } else {
-                        for ($i = 2; $i <= sizeof($arr); $i++) {
+                        for ($i = 2; $i <= sizeof($arr)-1; $i++) {
                             $content = $content . $arr[$i] . " ";
                         }
                         crea_modifica_fitxer($arr[1], $content);
