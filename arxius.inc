@@ -23,8 +23,24 @@ function esborra_fitxer($command){
     }
 }
 function sha1_peix($fitxer){
-    escriure(sha1($fitxer));
+    if (file_exists("dirs_and_files/".$fitxer)){
+        escriure(sha1($fitxer));
+    }else{
+        escriure("Unknown file");
+    }
+
 }
+
+
+function md5_peix($fitxer){
+    if (file_exists("dirs_and_files/".$fitxer)){
+        escriure(md5($fitxer));
+    }else{
+        escriure("Unknown file");
+    }
+
+}
+
 function file_stat($dir){
 
     $status = stat($dir);

@@ -105,6 +105,10 @@ function executa($comanda)
                 sha1_peix($arr[1]);
                 break;
 
+            case "md5":
+                md5_peix($arr[1]);
+                break;
+
             default:
                 escriure("unknown command");
                 break;
