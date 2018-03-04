@@ -1,4 +1,9 @@
-root@gerard-PC: dirs_and_files/ # md5 postu.txt
-root@gerard-PC: dirs_and_files/ # 8f3ebd62e459a090da4a36de7cf27b95
-root@gerard-PC: dirs_and_files/ # md5 jaja.txt
-root@gerard-PC: dirs_and_files/ # Unknown file
+root@gerard-PC: dirs_and_files/ # stats -s
+root@gerard-PC: dirs_and_files/ # Free :
+root@gerard-PC: dirs_and_files/ # Total :
+root@gerard-PC: dirs_and_files/ # stats -s
+root@gerard-PC: dirs_and_files/ # Free :291198693376
+root@gerard-PC: dirs_and_files/ # Total :499529019392
+root@gerard-PC: dirs_and_files/ # stats -s
+root@gerard-PC: dirs_and_files/ # Free :291180179456 58.290943699409%
+root@gerard-PC: dirs_and_files/ # Total :499529019392

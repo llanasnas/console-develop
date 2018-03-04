@@ -8,7 +8,7 @@
 include_once("console.php");
 include_once("directoris.inc");
 include_once("arxius.inc");
-include_once ("sistema.inc");
+include_once("sistema.inc");
 
 function executa($comanda)
 {
@@ -16,7 +16,7 @@ function executa($comanda)
         escriure($comanda);
         $arr = explode(' ', trim($comanda));
 
-        switch ($arr[0]){
+        switch ($arr[0]) {
 
             case "mkdir":
                 crea_directoris($comanda);
@@ -41,7 +41,7 @@ function executa($comanda)
 
             case "rm":
                 if ($arr[1] == "-d") {
-                    esborra_directoris("dirs_and_files/".$arr[2]);
+                    esborra_directoris("dirs_and_files/" . $arr[2]);
                 } else {
                     esborra_fitxer($comanda);
                 }
@@ -57,10 +57,10 @@ function executa($comanda)
                 break;
             case "find" :
 
-                if(empty($arr[1])||empty($arr[2])){
+                if (empty($arr[1]) || empty($arr[2])) {
                     escriure("Check the syntax ( find 'file' 'directory' )");
-                }else{
-                    find_fitcher($arr[1],$arr[2]);
+                } else {
+                    find_fitcher($arr[1], $arr[2]);
                 }
 
                 break;
@@ -74,24 +74,28 @@ function executa($comanda)
                     } else {
                         move_directory($arr[2], $arr[3]);
                     }
-                }else if($arr[1]=="-f"){
+                } else if ($arr[1] == "-f") {
                     if (empty($arr[2])) {
                         escriure("Check the syntax ( mv -d 'file' 'new location' )");
                     }
                     if (empty($arr[3])) {
                         escriure("Check the syntax ( mv -d 'file' 'new location' )");
                     } else {
-                        moure_fitxer($arr[2],$arr[3]);
+                        moure_fitxer($arr[2], $arr[3]);
                     }
                 }
                 break;
 
             case "stats":
 
-                if(is_file("dirs_and_files/".$arr[1])){
-                    file_stat("dirs_and_files/".$arr[1]);
-                }else{
-                    escriure("This file don't exist");
+                if ($arr[1] == "-f") {
+                    if (is_file("dirs_and_files/" . $arr[1])) {
+                        file_stat("dirs_and_files/" . $arr[1]);
+                    } else {
+                        escriure("This file don't exist");
+                    }
+                }elseif ($arr[1] == "-s"){
+                    stats_sistema();
                 }
 
 
@@ -114,14 +118,14 @@ function executa($comanda)
                 if ($arr[1] == "-d") {
                     if (empty($arr[2]) || empty($arr[3])) {
                         escriure("Check the syntax ( cp -d 'directory' 'new location' )");
-                    }else{
-                        copia_directori($arr[2],$arr[3]);
+                    } else {
+                        copia_directori($arr[2], $arr[3]);
                     }
-                }else if ($arr[1] == "-f") {
+                } else if ($arr[1] == "-f") {
                     if (empty($arr[2]) || empty($arr[3])) {
                         escriure("Check the syntax ( cp -f 'file' 'new location' )");
-                    }else{
-                        copia_fitxer($arr[2],$arr[3]);
+                    } else {
+                        copia_fitxer($arr[2], $arr[3]);
                     }
                 }
                 break;
