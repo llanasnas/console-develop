@@ -24,7 +24,7 @@ function esborra_directoris($dir){
                 }
             }
         }
-        rmdir($dir);
+        if(empty(scandir($dir))){rmdir($dir);}
     }else{
         escriure("this directory don't exist");
     }
