@@ -34,7 +34,7 @@ session_start();
 <div style="background-color: blue;width: 100%;height: 100%;">
 <div class="container-fluid col-md-4 col-md-offset-4" style="margin-top:5%;">
 
-<form method="post" action="console.php" class="form-group">
+<form autocomplete="off" method="post" action="console.php" class="form-group">
 
     <br>
     <div class="pagination-centered">
