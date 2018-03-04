@@ -13,4 +13,8 @@ function moures($dir){
 
 }
 
+function ruta(){
+    escriure(getcwd());
+}
+
 ?>

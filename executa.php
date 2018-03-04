@@ -109,6 +109,10 @@ function executa($comanda)
                 md5_peix($arr[1]);
                 break;
 
+            case "pwd":
+                ruta();
+                break;
+
             default:
                 escriure("unknown command");
                 break;
