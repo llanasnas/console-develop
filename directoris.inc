@@ -32,7 +32,10 @@ function esborra_directoris($dir){
 function escriure($text){
 
     $file = fopen("text_consola.txt","a")OR die("Cannot Open this file");
-    $text = "root@gerard-PC~# ". $text;
+    if($_SESSION['path']=="dirs_and_files"){
+        $text = "root@gerard-PC~# ". $text;
+    }else{ $text = "root@gerard-PC: ". $_SESSION['path']; }
+
     fwrite($file,$text . PHP_EOL);
     fclose($file);
 
@@ -85,8 +88,6 @@ function ls_other($path){
     }
 }
 function copia_directori($directorio,$destino){
-
-
 
     if(!is_dir("dirs_and_files/".$directorio)){
         escriure("file or directory not find");
