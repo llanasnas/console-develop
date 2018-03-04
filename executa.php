@@ -74,8 +74,18 @@ function executa($comanda)
                     } else {
                         move_directory($arr[2], $arr[3]);
                     }
+                }else if($arr[1]=="-f"){
+                    if (empty($arr[2])) {
+                        escriure("Check the syntax ( mv -d 'file' 'new location' )");
+                    }
+                    if (empty($arr[3])) {
+                        escriure("Check the syntax ( mv -d 'file' 'new location' )");
+                    } else {
+                        moure_fitxer($arr[2],$arr[3]);
+                    }
                 }
                 break;
+
             case "stats":
 
                 if(is_file("dirs_and_files/".$arr[1])){
@@ -106,6 +116,12 @@ function executa($comanda)
                         escriure("Check the syntax ( cp -d 'directory' 'new location' )");
                     }else{
                         copia_directori($arr[2],$arr[3]);
+                    }
+                }else if ($arr[1] == "-f") {
+                    if (empty($arr[2]) || empty($arr[3])) {
+                        escriure("Check the syntax ( cp -f 'file' 'new location' )");
+                    }else{
+                        copia_fitxer($arr[2],$arr[3]);
                     }
                 }
                 break;

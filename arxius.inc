@@ -42,12 +42,34 @@ function sha1_peix($fitxer){
 
 }
 
+function moure_fitxer($fitxer,$desti){
+
+    $fitxer="dirs_and_files/".$fitxer;
+    $desti = "dirs_and_files/".$desti;
+    if(file_exists($fitxer)){
+        if(!rename($fitxer,$desti)){
+            escriure("can't find this new directory");
+        }
+    }
+}
+
 
 function md5_peix($fitxer){
     if (file_exists("dirs_and_files/".$fitxer)){
         escriure(md5($fitxer));
     }else{
         escriure("Unknown file");
+    }
+
+}
+function copia_fitxer($old_file,$new_file){
+
+    if(file_exists($old_file)){
+        if(!copy($old_file,$new_file)){
+            escriure("cannot find this new destination");
+        }
+    }else{
+        escriure("cannot find this file");
     }
 
 }
