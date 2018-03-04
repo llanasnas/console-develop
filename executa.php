@@ -55,6 +55,15 @@ function executa($comanda)
                 moures($arr[1]);
 
                 break;
+            case "find" :
+
+                if(empty($arr[1])||empty($arr[2])){
+                    escriure("Check the syntax ( find 'file' 'directory' )");
+                }else{
+                    find_fitcher($arr[1],$arr[2]);
+                }
+
+                break;
             case "mv":
                 if ($arr[1] == "-d") {
                     if (empty($arr[2])) {

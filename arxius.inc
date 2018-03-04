@@ -22,6 +22,17 @@ function esborra_fitxer($command){
         escriure("can't find this file");
     }
 }
+function find_fitcher($fitxer,$dir){
+
+    if(file_exists($dir."/".$fitxer)){
+        escriure("The file ". $dir."/".$fitxer." exist");
+    }else{
+        escriure("The file ". $dir."/".$fitxer." not exist");
+    }
+
+}
+
+
 function sha1_peix($fitxer){
     if (file_exists("dirs_and_files/".$fitxer)){
         escriure(sha1($fitxer));
